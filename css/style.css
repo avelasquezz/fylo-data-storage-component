@@ -1,0 +1,232 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Globla variables */
+:root {
+  --peach: hsl(6, 100%, 80%);
+  --pink: hsl(335, 100%, 65%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --medium-dark-blue: hsl(229, 57%, 19%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  width: 100%;
+  height: 120vh;
+  background-color: var(--very-dark-blue);
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--pale-blue);
+  background-image: url('../images/bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+/* Main */
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section */
+section {
+  width: 900px;
+  height: 190px;
+  display: grid;
+  grid-template-columns: 1.25fr 2fr;
+  align-items: end;
+  gap: 30px;
+}
+
+.section-1, .section-2 {
+  box-shadow: 0 20px 20px hsla(0, 0%, 0%, 0.1);
+}
+
+/* Section 1 */
+.section-1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+  border-radius: 10px 100px 10px 10px;
+  background-color: var(--dark-blue);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--very-dark-blue);
+}
+
+/* Section 2 */
+.section-2 {
+  height: 75%;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  background-color: var(--dark-blue);
+  position: relative;
+}
+
+.free-space {
+  position: absolute;
+  width: 180px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 10px;
+  background-color: var(--white);
+  right: 35px;
+  bottom: 120px;
+  font-weight: 700;
+  color: var(--grayish-blue);
+}
+
+.section-2::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-top: 30px solid var(--white);
+  position: absolute;
+  right: 35px;
+  top: 15px;
+}
+
+.free-space span {
+  font-size: 13px;
+}
+
+.free-space .value {
+  color: var(--black);
+  font-size: 40px;
+}
+
+p span {
+  font-weight: 700;
+}
+
+.storage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: var(--medium-dark-blue);
+}
+
+.progress-bar {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 2px;
+  border-radius: 11px;
+  background: linear-gradient(to right, var(--peach), var(--pink));
+}
+
+.circle {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--pale-blue);
+}
+
+.limits {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1020px) {
+  section {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  body {
+    height: 100vh;
+  }
+
+  section {
+    width: 90%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+  }
+
+  .section-1 {
+    height: auto;
+    gap: 30px;
+  }
+
+  .section-2 {
+    height: auto;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .section-2::after {
+    display: none;
+  }
+
+  .free-space {
+    top: 120px;
+    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  body {
+    background-image: url('../images/bg-mobile.png');
+    background-position: center;
+  }
+}
